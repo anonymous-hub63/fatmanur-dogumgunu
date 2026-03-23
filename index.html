@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fatmanur 💙</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: linear-gradient(to right, #ff758c, #ff7eb3);
+    text-align: center;
+    color: white;
+}
+
+/* Giriş ekranı */
+#login {
+    margin-top: 150px;
+}
+
+input {
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Ana içerik */
+#content {
+    display: none;
+}
+
+img {
+    width: 220px;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+#no {
+    position: absolute;
+    background: red;
+    color: white;
+}
+
+#yes {
+    background: green;
+    color: white;
+}
+
+#mesaj {
+    display: none;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+/* Kalpler */
+.heart {
+    position: absolute;
+    color: red;
+    animation: float 4s linear infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); opacity:1; }
+    100% { transform: translateY(-800px); opacity:0; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Şifre ekranı -->
+<div id="login">
+    <h2>🔐 Gizli Sayfa</h2>
+    <input type="password" id="sifre" placeholder="Şifreyi gir">
+    <br><br>
+    <button onclick="kontrol()">Giriş Yap</button>
+</div>
+
+<!-- Ana site -->
+<div id="content">
+
+    <h1>İyi ki Doğdun Fatmanur 🎉</h1>
+
+    <img src="foto.jpg">
+
+    <p>Beni seviyor musun? 😄</p>
+
+    <button id="yes" onclick="evet()">Evet 💚</button>
+    <button id="no">Hayır ❌</button>
+
+    <iframe width="0" height="0" src="https://www.youtube.com/embed/1v7zQ6g8hXU?autoplay=1&loop=1&playlist=1v7zQ6g8hXU" 
+frameborder="0" allow="autoplay"></iframe>
+
+    <div id="mesaj">
+
+<pre>
+Farkında olmadan hayatıma en güzel rengi kattın,
+Aydınlattın en karanlık anlarımı gülüşünle.
+Tek bir an bile pişman etmedin varlığınla,
+Mutluluğun en saf halini seninle tattım.
+Anılar biriktirdik, her biri ayrı değerli,
+Ne zaman düşsem hep yanımda oldun.
+Unutulmayacak kadar özelsin benim için,
+Ruhumda iz bırakan en güzel insansın.
+</pre>
+
+<br>
+
+İyi ki doğdun Fatmanur 🎉  
+Hayatıma girdiğin günden beri her şey daha güzel oldu.  
+Sen sadece bir arkadaş değil, aynı zamanda en zor anlarımda yanımda olan  
+en değerli insanlardan birisin.  
+
+Seninle güldüğüm anlar, yaptığımız saçmalıklar  
+benim için çok kıymetli.  
+
+İyi ki varsın, iyi ki hayatımdasın 💙  
+Nice mutlu yıllara 🎂
+
+    </div>
+
+</div>
+
+<script>
+
+// Şifre kontrol
+function kontrol() {
+    let sifre = document.getElementById("sifre").value;
+
+    if(sifre === "24/03/2010") {
+        document.getElementById("login").style.display = "none";
+        document.getElementById("content").style.display = "block";
+    } else {
+        alert("Yanlış şifre 😢");
+    }
+}
+
+// EVET
+function evet() {
+    document.getElementById("mesaj").style.display = "block";
+    document.getElementById("muzik").play();
+    kalpYagdir();
+}
+
+// KAÇAN BUTON
+let no = document.getElementById("no");
+
+no.addEventListener("mouseover", function() {
+    no.style.top = Math.random() * window.innerHeight + "px";
+    no.style.left = Math.random() * window.innerWidth + "px";
+});
+
+// KALPLER
+function kalpYagdir() {
+    setInterval(() => {
+        let kalp = document.createElement("div");
+        kalp.className = "heart";
+        kalp.innerHTML = "❤️";
+        kalp.style.left = Math.random() * window.innerWidth + "px";
+        document.body.appendChild(kalp);
+
+        setTimeout(() => {
+            kalp.remove();
+        }, 4000);
+    }, 300);
+}
+</script>
+
+</body>
+</html>
